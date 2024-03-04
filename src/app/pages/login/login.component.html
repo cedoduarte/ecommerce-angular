@@ -1,0 +1,29 @@
+<form class="login-form">
+    <div class="login-title">
+        <h2>
+            <i class="material-symbols-outlined">
+                shoppingmode
+            </i>ECOMMERCE
+        </h2>
+        <h3>Sign In</h3>
+        <i class="material-symbols-outlined">tv_signin</i>
+    </div>
+    <mat-form-field class="login-input" appearance="outline">
+        <mat-label>Username or email</mat-label>
+        <input matInput placeholder="Username or email" name="usernameOrEmail" [(ngModel)]="signinDto.usernameOrEmail" />
+    </mat-form-field>
+    <mat-form-field class="login-input" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" name="password" [(ngModel)]="signinDto.password" />
+        <mat-icon class="login-toggle-password-button" matSuffix (click)="togglePassword()">
+            <i class="material-symbols-outlined">
+                {{ showPassword ? 'visibility_off' : 'visibility' }}
+            </i>            
+        </mat-icon>
+    </mat-form-field>
+    <button mat-button type="button" class="login-signin-button" (click)="handleSignIn()">
+        <i class="material-symbols-outlined">
+            login
+        </i>Sign in
+    </button>
+</form>
