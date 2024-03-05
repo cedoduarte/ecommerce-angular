@@ -13,6 +13,5 @@ export class HomeComponent {
   router = inject(Router);
 
   constructor() {
-    this.router.navigate(["/poster"]);
   }
 }

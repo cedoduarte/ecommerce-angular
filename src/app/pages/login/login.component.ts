@@ -31,6 +31,10 @@ export class LoginComponent {
     this.showPassword = !this.showPassword;
   }
 
+  handleEnterKeyPressed(event: any) {
+    this.handleSignIn();
+  }
+
   handleSignIn() {
     this.userService.signinUser(this.signinDto).subscribe(
       data => {
@@ -38,7 +42,7 @@ export class LoginComponent {
         //userStore.setState(true, data);
         localStorage.setItem("loggedin", "true");
         this.toastr.success(`Welcome ${data.firstName} ${data.lastName}`);
-        this.router.navigate(["/"]);
+        this.router.navigate(["/poster"]);
       }, 
       errorObject => {
         this.toastr.error(errorObject.error.substring(18, errorObject.error.indexOf("!") + 1));

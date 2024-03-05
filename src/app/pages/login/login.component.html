@@ -10,11 +10,21 @@
     </div>
     <mat-form-field class="login-input" appearance="outline">
         <mat-label>Username or email</mat-label>
-        <input matInput placeholder="Username or email" name="usernameOrEmail" [(ngModel)]="signinDto.usernameOrEmail" />
+        <input 
+            matInput 
+            placeholder="Username or email" 
+            name="usernameOrEmail" 
+            [(ngModel)]="signinDto.usernameOrEmail" />
     </mat-form-field>
     <mat-form-field class="login-input" appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" name="password" [(ngModel)]="signinDto.password" />
+        <input 
+            matInput 
+            [type]="showPassword ? 'text' : 'password'" 
+            placeholder="Password" 
+            name="password" 
+            [(ngModel)]="signinDto.password"
+            (keyup.enter)="handleEnterKeyPressed($event)" />
         <mat-icon class="login-toggle-password-button" matSuffix (click)="togglePassword()">
             <i class="material-symbols-outlined">
                 {{ showPassword ? 'visibility_off' : 'visibility' }}
