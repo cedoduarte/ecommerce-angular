@@ -70,7 +70,7 @@ export interface ICreateProductDto {
     description: string;
     price: number;
     stock: number;
-    imagehref: string; 
+    imagehref: string;
 }
 
 export interface IProductViewModel {
@@ -92,4 +92,25 @@ export interface IUpdateProductDto {
     price: number;
     stock: number;
     imagehref: string;
+}
+
+export interface IProduct {
+    product: IProductViewModel;
+    count: number;
+    total: number;
+}
+
+export interface IShoppingCartState {
+    productList: IProduct[];
+    total: number;
+}
+
+export interface IUserState {
+    user: IUserViewModel | null;
+    loggedin: boolean;
+}
+
+export interface IAppState {
+    shoppingCart: IShoppingCartState;
+    user: IUserState;
 }

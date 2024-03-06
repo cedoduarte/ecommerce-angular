@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { setUser } from '../../store/user.store';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +22,7 @@ export class LoginComponent {
   userService = inject(UserService);
   toastr = inject(ToastrService);
   router = inject(Router);
+  store = inject(Store);
   showPassword = false;
 
   signinDto: ISigninUserDto = {
@@ -38,9 +41,10 @@ export class LoginComponent {
   handleSignIn() {
     this.userService.signinUser(this.signinDto).subscribe(
       data => {
-        // todo...
-        //userStore.setState(true, data);
-        localStorage.setItem("loggedin", "true");
+        this.store.dispatch(setUser({
+          user: data,
+          loggedin: true
+        }));
         this.toastr.success(`Welcome ${data.firstName} ${data.lastName}`);
         this.router.navigate(["/poster"]);
       }, 
