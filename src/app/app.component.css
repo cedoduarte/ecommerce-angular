@@ -1,0 +1,11 @@
+.app-drawer-container {
+  height: 100vh;
+}
+
+.app-drawer-content {
+  padding: 1rem;
+}
+
+.app-drawer {
+  width: 250px;
+}

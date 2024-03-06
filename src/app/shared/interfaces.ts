@@ -110,7 +110,12 @@ export interface IUserState {
     loggedin: boolean;
 }
 
+export interface IDrawerState {
+    opened: boolean;
+}
+
 export interface IAppState {
     shoppingCart: IShoppingCartState;
     user: IUserState;
+    drawer: IDrawerState;
 }

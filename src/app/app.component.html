@@ -1,1 +1,11 @@
-<router-outlet />
+<mat-drawer-container class="app-drawer-container">
+    <mat-drawer-content class="app-drawer-content">
+        <router-outlet />
+    </mat-drawer-content>
+    <mat-drawer 
+        class="app-drawer"
+        mode="side"
+        position="start" 
+        [opened]="drawer().opened">
+    </mat-drawer>
+</mat-drawer-container>
