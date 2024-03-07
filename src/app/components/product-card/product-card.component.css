@@ -1,0 +1,10 @@
+.product-card-container {
+    max-width: 400px;
+}
+.testeo {
+    text-align: center;
+}
+.product-card-image {
+    width: 200px;
+    height: 200px;
+}

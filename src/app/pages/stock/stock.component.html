@@ -1,1 +1,17 @@
-<p>stock works!</p>
+<h2>Stock</h2>
+<app-search-textfield 
+    (searchTriggered)="handleSearchTriggered($event)" />
+<div class="stock-card-grid">
+    @for (item of productList; track item.id) {
+    <app-product-card
+        [id]="item.id"
+        [name]="item.name"
+        [description]="item.description"
+        [price]="item.price"
+        [stock]="item.stock"
+        [imagehref]="item.imagehref"
+        [lastModified]="item.lastModified"
+        [createdDate]="item.createdDate"
+        [isDeleted]="item.isDeleted" />
+    }
+</div>

@@ -25,13 +25,20 @@
             name="password" 
             [(ngModel)]="signinDto.password"
             (keyup.enter)="handleEnterKeyPressed($event)" />
-        <mat-icon class="login-toggle-password-button" matSuffix (click)="togglePassword()">
-            <i class="material-symbols-outlined">
-                {{ showPassword ? 'visibility_off' : 'visibility' }}
-            </i>            
-        </mat-icon>
+            <mat-icon 
+                class="login-toggle-password-button" 
+                matSuffix 
+                (click)="togglePassword()">
+                <i class="material-symbols-outlined">
+                    {{ showPassword ? 'visibility_off' : 'visibility' }}
+                </i>            
+            </mat-icon>
     </mat-form-field>
-    <button mat-button type="button" class="login-signin-button" (click)="handleSignIn()">
+    <button 
+        mat-button 
+        type="button" 
+        class="login-signin-button" 
+        (click)="handleSignIn()">
         <i class="material-symbols-outlined">
             login
         </i>Sign in
