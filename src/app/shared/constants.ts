@@ -21,7 +21,7 @@ export const URL_PRODUCT_UPDATE = `${API_BASE_URL}/Product/update`;
 export const URL_PRODUCT_GET_BY_ID = `${API_BASE_URL}/Product/get-by-id`;
 export const URL_PRODUCT_GET_LIST = `${API_BASE_URL}/Product/get-list`;
 
-export const countryList = [
+export const COUNTRY_LIST = [
     "Afghanistan",
     "Albania",
     "Algeria",

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
@@ -10,10 +10,10 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   router = inject(Router);
 
-  constructor() {
-    //this.router.navigate(["/poster"]);
+  ngOnInit() {
+    this.router.navigate(["/poster"]);
   }
 }

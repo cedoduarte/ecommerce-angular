@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from "@angular/material/button";
 import { UserService } from '../../services/user.service';
@@ -18,7 +18,7 @@ import { setUser } from '../../store/user.store';
   styleUrl: './login.component.css',
   providers: [UserService]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   userService = inject(UserService);
   toastr = inject(ToastrService);
   router = inject(Router);
@@ -29,6 +29,13 @@ export class LoginComponent {
     usernameOrEmail: "",
     password: ""
   };
+
+  ngOnInit() {
+    this.store.dispatch(setUser({
+      user: JSON.parse(localStorage.getItem("user") as string),
+      loggedin: JSON.parse(localStorage.getItem("loggedin") as string)
+    }));
+  }
 
   togglePassword() {
     this.showPassword = !this.showPassword;

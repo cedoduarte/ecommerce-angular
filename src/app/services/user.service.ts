@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { ISigninUserDto, IUserViewModel, IUpdateUserDto, IDeleteAccountDto, ICreateAccountDto, IChangePasswordDto } from "../shared/interfaces";
 import { Observable, share } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { URL_USER_GET_LIST, AUTHORIZATION_TOKEN, URL_USER_GET_BY_ID, URL_USER_UPDATE, URL_USER_SIGNIN, URL_USER_RESTORE, URL_ACCOUNT_DELETE, URL_USER_DELETE, URL_USER_CREATE } from "../shared/constants";
+import { URL_USER_GET_LIST, AUTHORIZATION_TOKEN, URL_USER_GET_BY_ID, URL_USER_UPDATE, URL_USER_SIGNIN, URL_USER_RESTORE, URL_ACCOUNT_DELETE, URL_USER_DELETE, URL_USER_CREATE, URL_USER_CHANGE_PASSWORD } from "../shared/constants";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class UserService {
       "Content-Type": "application/json",
       "Authorization": AUTHORIZATION_TOKEN
     });
-    return this.http.put<IUserViewModel>(URL_USER_UPDATE, body, { headers }).pipe(share());
+    return this.http.put<IUserViewModel>(URL_USER_CHANGE_PASSWORD, body, { headers }).pipe(share());
   }
 
   createUser(body: ICreateAccountDto): Observable<IUserViewModel> {
