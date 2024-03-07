@@ -7,5 +7,19 @@
         mode="side"
         position="start" 
         [opened]="drawer().opened">
+        <ul class="app-drawer-list">
+            <li class="app-drawer-item" (click)="handleStockClicked()">
+                <span>🛒 Stock</span>
+            </li>
+            <li class="app-drawer-item" (click)="handleProfileClicked()">
+                <span>🙍‍♀️ Profile</span>
+            </li>
+            <li class="app-drawer-item" (click)="handleSettingClicked()">
+                <span>🎚️ Settings</span>
+            </li>
+            <li class="app-drawer-item" (click)="handleSignOutClicked()">
+                <span>❌ Sign Out</span>
+            </li>
+        </ul>
     </mat-drawer>
 </mat-drawer-container>

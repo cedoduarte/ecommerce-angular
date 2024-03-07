@@ -9,3 +9,27 @@
 .app-drawer {
   width: 250px;
 }
+
+.app-drawer-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-drawer-item {
+  font-size: 20px;
+  margin-bottom: 10px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.app-drawer-item span {
+  position: relative;
+  top: 15px;
+  left: 10px;
+}
+
+.app-drawer-item:hover {
+  background-color: rgb(160, 152, 152);
+  color: white;
+}

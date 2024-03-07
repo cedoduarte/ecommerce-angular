@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import { selectDrawer, toggleDrawer } from '../../store/drawer.store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ import { selectDrawer, toggleDrawer } from '../../store/drawer.store';
 })
 export class NavbarComponent {
   store = inject(Store);
+  router = inject(Router);
   drawer = this.store.selectSignal(selectDrawer);
 
   handleToggleDrawer() {
@@ -23,6 +25,6 @@ export class NavbarComponent {
   }
 
   handleGoShoppingCart() {
-    console.log("go shopping cart");
+    this.router.navigate(["/shopping-cart"]);
   }
 }
