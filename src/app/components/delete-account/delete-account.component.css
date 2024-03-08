@@ -1,0 +1,26 @@
+.delete-account-form {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 500px;
+    position: relative;
+    left: 30vw;
+}
+
+.delete-account-title {
+    margin-bottom: 10px;
+}
+
+.delete-account-toggle-button {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.delete-account-save-button {
+    position: relative;
+    left: 12rem;
+    margin-bottom: 20px;
+}
+
+.delete-account-field {
+    width: 100%;
+}

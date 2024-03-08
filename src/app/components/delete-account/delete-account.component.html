@@ -1,1 +1,53 @@
-<p>delete-account works!</p>
+<form 
+    class="delete-account-form" 
+    [formGroup]="accountForm" 
+    (ngSubmit)="handleSubmit()">
+    <h3 class="delete-account-title">Delete account</h3>
+    <mat-form-field appearance="outline" class="delete-account-field">
+        <mat-label>Username or email</mat-label>
+        <input
+            matInput
+            formControlName="username"
+            placeholder="Username or email"
+            name="username" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="delete-account-field">
+        <mat-label>Current password</mat-label>
+        <input
+            matInput
+            [type]="showCurrentPassword ? 'text' : 'password'"
+            formControlName="currentPassword"
+            placeholder="Current password"
+            name="currentPassword" />
+        <mat-icon
+            class="delete-account-toggle-button"
+            matSuffix
+            (click)="handleToggleCurrentPassword()">
+            <i class="material-symbols-outlined">
+                {{ showCurrentPassword ? 'visibility_off' : 'visibility' }}
+            </i> 
+        </mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="delete-account-field">
+        <mat-label>Confirmed password</mat-label>
+        <input
+            matInput
+            [type]="showConfirmedPassword ? 'text' : 'password'"
+            formControlName="confirmedPassword"
+            placeholder="Confirmed password"
+            name="confirmedPassword" />
+        <mat-icon 
+            class="delete-account-toggle-button"
+            matSuffix
+            (click)="handleToggleConfirmedPassword()">
+            <i class="material-symbols-outlined">
+                {{ showConfirmedPassword ? 'visibility_off' : 'visibility' }}
+            </i> 
+        </mat-icon>
+    </mat-form-field>
+    <button mat-button type="submit" class="delete-account-save-button">
+        <i class="material-symbols-outlined">
+            save
+        </i>Save
+    </button>
+</form>
