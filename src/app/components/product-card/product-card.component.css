@@ -1,9 +1,11 @@
 .product-card-container {
     max-width: 400px;
 }
-.testeo {
+
+.product-card-image-container {
     text-align: center;
 }
+
 .product-card-image {
     width: 200px;
     height: 200px;
